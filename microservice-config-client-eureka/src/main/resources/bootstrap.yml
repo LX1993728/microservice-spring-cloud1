@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: MICROSERVICE-CONFIG-SERVER-EUREKA
+      username: liuxun
+      password: 123456
+      profile: dev
+  application:
+    name: foobar
+
+# 注册到Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://liuxun:123456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+#
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/Workspace/spring_cloud_workspace/git-repos/spring-cloud-config-repo

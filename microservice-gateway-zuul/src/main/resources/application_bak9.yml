@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+
+server:
+  port: 8040
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://liuxun:123456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+
+# 迁移系统，本地转发
+zuul:
+  routes:
+    user:
+      path: /users/**
+      url: http://localhost:7901/
+    info:
+      path: /i/**
+      url: forward:/info
+    routes:
+      path: /r/**
+      url: forward:/routes
+    movie:
+      path: /**
+      url: http://localhost:7900/

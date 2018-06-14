@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+# 启动的时候克隆配置到本地
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LX1993728/spring-cloud-config-repo
+          repos:
+            simple: https://github.com/LX1993728/simple
+#              cloneOnStart: false
+            special:
+              pattern: special*/dev*, special*/test*
+              uri: https://github.com/LX1993728/special
+          search-paths:  # 仓库中/bar路径
+            - foo  # 仓库中/foo 路径下寻找
+            - bar
+          clone-on-start: true

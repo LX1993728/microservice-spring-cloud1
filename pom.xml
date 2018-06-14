@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.liuxun.cloud</groupId>
+	<artifactId>microservice-spring-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<modules>
+		<module>microservice-simple-provider-user</module>
+		<module>microservice-simple-consumer-movie</module>
+		<module>microservice-provider-user</module>
+		<module>microservice-consumer-movie</module>
+		<module>microservice-consumer-movie-ribbon</module>
+		<module>microservice-consumer-movie-ribbon-test</module>
+		<module>microservice-consumer-movie-ribbon-properties-custom</module>
+		<module>microservice-consumer-movie-ribbon-without-eureka</module>
+		<module>microservice-consumer-movie-ribbon-with-hystrix</module>
+		<module>microservice-consumer-movie-ribbon-with-hystrix2</module>
+		<module>microservice-consumer-movie-ribbon-with-hystrix3</module>
+		<module>microservice-consumer-movie-ribbon-with-hystrix-propagation</module>
+		<module>microservice-consumer-movie-feign</module>
+		<module>microservice-consumer-movie-feign-custom</module>
+		<module>microservice-consumer-movie-feign-with-hystrix</module>
+		<module>microservice-consumer-movie-feign-with-hystrix-fallback-factory</module>
+		<module>microservice-hystrix-dashboard</module>
+		<module>microservice-hystrix-turbine</module>
+		<module>microservice-hystrix-turbine2</module>
+		<module>microservice-hystrix-turbine3</module>
+		<module>microservice-discovery-eureka</module>
+		<module>microservice-discovery-eureka-ha</module>
+		<module>microservice-file-upload</module>
+		<module>microservice-gateway-zuul</module>
+		<module>microservice-gateway-zuul-reg-exp</module>
+		<module>microservice-gateway-zuul-fallback</module>
+		<module>microservice-gateway-zuul-filter</module>
+		<module>microservice-sidecar</module>
+		<module>microservice-config-server</module>
+		<module>microservice-config-server-encrypt</module>
+		<module>microservice-config-server-encrypt-rsa</module>
+		<module>microservice-config-server-authc</module>
+		<module>microservice-config-server-eureka</module>
+		<module>microservice-config-server-LastFull</module>
+		<module>microservice-config-client</module>
+		<module>microservice-config-client-authc</module>
+		<module>microservice-config-client-eureka</module>
+		<module>microservice-config-client-refresh</module>
+		<module>microservice-config-client-refresh-bus</module>
+		<module>microservice-config-client-LastFull</module>
+	</modules>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.5.RELEASE</version>
+	</parent>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR7</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

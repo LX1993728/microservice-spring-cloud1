@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      uri: http://liuxun:123456@localhost:8080
+      profile: dev
+      label: master
+  application:
+    name: foobar

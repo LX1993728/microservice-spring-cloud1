@@ -1,0 +1,33 @@
+server:
+  port: 8082
+spring:
+  cloud:
+    config:
+        discovery:
+          enabled: true
+          service-id: MICROSERVICE-CONFIG-SERVER # 配置中心服务ID
+        username: liuxun
+        password: 123456
+        label: master
+    bus:
+      trace:
+        enabled: true
+  application:
+    name: foobar
+    index: ${random.long}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: dev
+
+
+# 注册到Eureka服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://liuxun:123456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

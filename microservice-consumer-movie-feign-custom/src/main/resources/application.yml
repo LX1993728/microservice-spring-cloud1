@@ -1,0 +1,28 @@
+server:
+  port: 7901
+
+spring:
+  application:
+    name: microservice-consumer-movie-feign-custom
+eureka:
+  client:
+    service-url:
+      defaultZone: http://liuxun:123456@localhost:8761/eureka # 声明注册中心地址
+  instance:
+    prefer-ip-address: true #显示IP地址
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}} #自定义在注册中心的显示格式，不是必须的
+
+feign:
+  compression:
+    request:
+      mime-types: text/xml,application/xml,application/json #只对feign传输的这些格式数据进行压缩
+      min-request-size: 2048 #当请求的数据量超过2M,才开启压缩
+
+logging.level.com.liuxun.cloud.feign.UserFeignClient: DEBUG
+
+# 解决第一次请求报超时异常的方案：
+# hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+# 或者：
+# hystrix.command.default.execution.timeout.enabled: false
+# 或者：
+feign.hystrix.enabled: false ## 索性禁用feign的hystrix

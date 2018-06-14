@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+
+server:
+  port: 8040
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://liuxun:123456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+#此配置在某服务实例配置了context-path下使用
+zuul:
+  routes:
+    microservice-provider-user:
+      path: /aaa/**
+      stripPrefix: false
+
+
+logging:
+  level:
+    com.netflix: debug

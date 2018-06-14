@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8080
+      profile: dev # test, dev, production, default
+      label: master # 当config server的后端存储是git时, 默认是master
+    bus:
+      trace:
+        enabled: true
+  application:
+    name: foobar
+    index: ${random.long}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+
