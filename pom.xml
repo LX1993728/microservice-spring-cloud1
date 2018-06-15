@@ -31,6 +31,7 @@
 		<module>microservice-consumer-movie-feign-custom</module>
 		<module>microservice-consumer-movie-feign-with-hystrix</module>
 		<module>microservice-consumer-movie-feign-with-hystrix-fallback-factory</module>
+		<module>microservice-consumer-redis-session</module>
 		<module>microservice-hystrix-dashboard</module>
 		<module>microservice-hystrix-turbine</module>
 		<module>microservice-hystrix-turbine2</module>
@@ -42,6 +43,7 @@
 		<module>microservice-gateway-zuul-reg-exp</module>
 		<module>microservice-gateway-zuul-fallback</module>
 		<module>microservice-gateway-zuul-filter</module>
+		<module>microservice-gateway-zuul-redis-session</module>
 		<module>microservice-sidecar</module>
 		<module>microservice-config-server</module>
 		<module>microservice-config-server-encrypt</module>
